@@ -13,12 +13,12 @@ const Counter = (props) => {
         return classes;
     };
 
-    const handleIncrement = () => {
-        // setValue((prevState) => prevState + 1);
-    };
-    const handleDecrement = () => {
-        // setValue((prevState) => prevState - 1);
-    };
+    // const handleIncrement = () => {
+    //     // setValue((prevState) => prevState + 1);
+    // };
+    // const handleDecrement = () => {
+    //     // setValue((prevState) => prevState - 1);
+    // };
 
     return (
         <div>  
@@ -26,13 +26,13 @@ const Counter = (props) => {
             <span className={getBageClasses()}>{formatValue()}</span>
             <button 
                 className="btn btn-primary btn-sm m-2" 
-                onClick={handleIncrement}
+                onClick={() => props.onIncrement(props.id)}
             >
                 +
             </button>
             <button 
                 className="btn btn-primary btn-sm m-2" 
-                onClick={handleDecrement}
+                onClick={() => props.onDecrement(props.id)}
             >
                 -
             </button>
