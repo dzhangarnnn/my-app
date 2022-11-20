@@ -26,13 +26,13 @@ const Counter = (props) => {
             <span className={getBageClasses()}>{formatValue()}</span>
             <button 
                 className="btn btn-primary btn-sm m-2" 
-                onClick={handleIncrement}
+                
             >
                 +
             </button>
             <button 
                 className="btn btn-primary btn-sm m-2" 
-                onClick={handleDecrement}
+                
             >
                 -
             </button>
