@@ -31,6 +31,7 @@ const Counter = (props) => {
                 +
             </button>
             <button 
+                disabled={value === 0 ? true : false}
                 className="btn btn-primary btn-sm m-2" 
                 onClick={() => props.onDecrement(props.id)}
             >
