@@ -19,15 +19,33 @@ const CounterList = () => {
         setCounters(initialState);
     };
     const handleIncrement = (id) => {
-        // counters[id].value += 1; 
-        // setCounters(counters[id].value + 1)
-        setCounters((prevState) => prevState[id].value + 1);
+        const newValueCounters = counters.map((item) => {
+            if (item.id === id) {
+                return  {...item, value: item.value + 1}
+            }
+            return item;
+        });
+        setCounters(newValueCounters);
+    };
+    const handleDecrement = (id) => {
+        const newValueCounters = counters.map((item) => {
+            if (item.id === id) {
+                return  {...item, value: item.value - 1}
+            }
+            return item;
+        });
+        setCounters(newValueCounters);
     };
     return (
         <>
             {counters.map((count) => (
                 <Counter 
-                    key={count.id} onDelete={handleDelete} onIncrement={handleIncrement} {...count}/>
+                    key={count.id} 
+                    onDelete={handleDelete} 
+                    onIncrement={handleIncrement} 
+                    onDecrement={handleDecrement}
+                    {...count}
+                />
             ))}
             <button 
                 className="btn btn-primary btn btn-sm m-2" 
